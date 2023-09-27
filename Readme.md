@@ -7,7 +7,6 @@ This README provides step-by-step instructions to set up and run the project in 
 
 To get started with this project, you can either clone the repository or download it as a ZIP archive.
 
-```bash
 git clone <repository-url>
 
 
