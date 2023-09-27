@@ -1,4 +1,5 @@
 # Project Setup Instructions
+![Uploading image.png…]()
 
 This README provides step-by-step instructions to set up and run the project in Visual Studio 2022. 
 
