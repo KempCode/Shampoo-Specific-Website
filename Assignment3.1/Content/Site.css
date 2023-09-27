@@ -1,0 +1,135 @@
+﻿body {
+    padding-top: 50px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+    border-color: #fff
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    /*navbar text*/
+    /*color: white;*/
+    color: #f2f2f2;
+}
+
+.navbar-inverse {
+    background-color: #4a4a4a;
+    border: none;
+}
+
+    .navbar-inverse .navbar-brand {
+        /*Logo text* */
+        color: #f2f2f2;
+    }
+
+#topSection {
+    height: 100px;
+    background-color: lavender;
+}
+
+@media only screen and (max-width: 767px) {
+    /*Mobile menu*/
+    #changer {
+        float:none !important;
+        text-align:center;
+    }
+    .form-control{
+        text-align:center;
+        margin:0 auto;
+        margin-top:5px;
+        width: 40%;
+        height:30px;
+    }
+    #searchButton{
+        width: 40%;
+    }
+    .your-class > div{
+       
+        height: 200px;
+    }
+        .your-class > div > img {
+            height: 200px;
+            width: 100%
+        }
+
+}
+
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    /*Border color for drop down menu*/
+    border-color: #4a4a4a;
+}
+
+.table {
+    margin: 25px 0;
+    min-width: 350px !important;
+}
+
+
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+    padding: 16px;
+    text-align: center;
+    font-size: 12pt;
+    
+}
+
+.categoryActionHolder > a, #createNew> a{
+    padding: 6px;
+    font-size: 9pt;
+    margin-left: 5px;
+    color: white;
+    background-color: #4a4a4a;
+    border-radius: 5px;
+}
+
+
+/*Footer of the page*/
+footer {
+    background-color: lavender;
+    color: black;
+}
+
+    .footerFlexContainer > div {
+        flex-grow: 1;
+        flex-basis: 100%;
+        /*Divide sections equally*/
+        text-align: center;
+        padding: 1%;
+    }
+
+
+#indexColumns>div>h2{
+    text-align:center;
+}
+
+
+#indexColumns, h2{
+    font-family: 'Forum', cursive;
+}
+h2{
+    text-align:center;
+}
+

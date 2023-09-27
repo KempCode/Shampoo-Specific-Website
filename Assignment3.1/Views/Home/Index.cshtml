@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="your-class">
+    <div>
+        <img src="https://media.vanityfair.com/photos/6064a64ae2c6fb62f3ea3fd1/master/pass/Shampoo-for-thinning-hair-tout.jpg" alt="3 pink shampoo bottles" />
+    </div>
+    <div>
+        <img src="https://cdn.shopify.com/s/files/1/0255/4029/6797/files/IMG_0332-1_1500x.jpg?v=1637188681" alt="2 green shampoo bottles" />
+    </div>
+</div>
+<br />
+<br />
+
+<div class="row" id="indexColumns">
+    <div class="col-md-4">
+        <h2>About us</h2>
+        <p><b>Shampoo Specific</b> is a tool designed to help you match the the correct type of shampoo to your hairtype
+        to avoid damage and look after your precious hair in the long run!</p>
+    </div>
+    <div class="col-md-4">
+        <h2>How To</h2>
+        <p>You can find shampoos for your hair type by clicking <b>Hair Type</b> and selecting your hair type. 
+        You will be shown a range of products that might suit you!</p>
+    </div>
+    <div class="col-md-4">
+        <h2>More Info</h2>
+        <p>You can also click <b>Shampoos</b>, this will show you every single product! These can be sorted into your hair
+        type on this page too! Or even searched.</p>
+    </div>
+</div>
+<br />
+<br />
+
+@Scripts.Render("~/bundles/jquery")
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+    $(".your-class>div>img").css("height", "400px");
+    $(".your-class>div>img").css("width", "711px");
+    $(".your-class>div>img").css("object-fit", "cover");
+    $(".your-class>div>img").css("margin", "0 auto");
+    $(".your-class>div>img").css("border-radius", "5px");
+
+    //flexslider responsive carousel image slider.
+    $(".your-class").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        cssEase: "ease",
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
+    });
+
+   
+
+
+
+</script>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <section style="position: fixed" class="navbar-fixed-top" id="topSection">
+        <div class="row">
+        </div>
+    </section>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" style="margin-top:50px">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Shampoo Specific", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse" id="changer" style="float:right">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Hair Type", "Index", "Categories")</li>
+                    <li>@Html.ActionLink("Shampoos", "Index", "Products")</li>
+                </ul>
+                @using (Html.BeginForm("Index", "Products", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+                {
+                    <div class="form-group">
+                        @Html.TextBox("Search", null, new { @class = "form-control", @placeHolder = "Search Shampoos" })
+                    </div>
+                    <button type="submit" class="btn btn-default" id="searchButton">Submit</button>
+                }
+
+
+            </div>
+        </div>
+    </div>
+    <br /><br /><br /><br /><br />
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+
+    <!-- footer of the pages -->
+    <footer>
+        <section class="footerFlexContainer">
+            <div class="about">
+                <h4>Copyright</h4>
+                <p>
+                    &copy; @DateTime.Now.Year - Michael Kemp 22010820 <br />
+                    <i>Last Update: 14/10/2022</i>
+                </p>
+            </div>
+
+            <div class="contact">
+                <h4>Contact</h4>
+
+                <address>Address: Lost City, Somewhere Street, No.13<br />
+                <a href="mailto:abc@example.com">abc@example.com</a> 
+                </address>
+                
+
+            </div>
+        </section>
+    </footer>
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+
+</body>
+</html>

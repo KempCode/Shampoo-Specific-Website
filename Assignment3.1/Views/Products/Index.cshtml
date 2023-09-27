@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Assignment3.Models.Product>
+
+@{
+    ViewBag.Title = "Shampoo List";
+}
+
+<h2>Shampoo Menu</h2>
+<br />
+
+<p id="createNew">
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Products", FormMethod.Get))
+{
+    <label>Filter by Hair Type: </label> @Html.DropDownList("Category", "All")
+    <input type="submit" value="Filter" />
+    <input type="hidden" name="Search" id="Search" value="@ViewBag.Search" />
+}
+
+<table class="table">
+    <tr>
+        <th>
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src=@Html.DisplayFor(modelItem => item.ImageURL) width=200 height=200 alt=@Html.DisplayFor(modelItem =>item.ImageAlternativeText)>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td style="min-width:400px">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td class="categoryActionHolder">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <br /><br />
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) <br /><br />
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+    //Styling for drop down menu using Jquery.
+    $("#Category").css({
+        "background-color": "#4a4a4a", "color": "white", "text-align": "center",
+        "width": "200px",
+    });
+</script>
